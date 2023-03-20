@@ -20,7 +20,12 @@ public List<Chore> GetAllChores()
     return _repo.GetAllChores();
 }
 
-
+  internal Chore GetOneChore(int id)
+  {
+    Chore chore = _repo.GetOneChore(id);
+    if (chore == null) throw new Exception($"No Chore at id:{id}");
+    return chore;
+  }
 }
 
 
